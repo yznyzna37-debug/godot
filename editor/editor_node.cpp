@@ -9896,3 +9896,13 @@ EditorNode::~EditorNode() {
 
 	singleton = nullptr;
 }
+#include "editor/editor_node.h"
+#include "scene/gui/texture_button.h"
+#include "core/os/os.h"
+
+void EditorNode::_on_smart_assistant_pressed() {
+    OS::get_singleton()->print("Smart Assistant Button Pressed on Mobile!\n");
+    String smart_code = "extends CharacterBody3D\n# تم توليد الكود بالصوت عبر المود السوري الذكي\n";
+    OS::get_singleton()->set_clipboard(smart_code);
+    show_accept_alert("تم نسخ كود الأنمي التكتيكي الذكي في الحافظة! اضغط لصق.");
+}

@@ -1,6 +1,21 @@
-#!/usr/bin/env python
-from misc.utility.scons_hints import *
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-Import("env")
+import os
+import methods
 
-env.add_source_files(env.editor_sources, "*.cpp")
+def can_build(env, platform):
+    return True
+
+def configure(env):
+    pass
+
+# 🚀 تسجيل ملف المساعد الصوتي السوري رسمياً في خط الإنتاج
+files = [
+    "editor_plugin_compat.cpp",
+    "editor_plugin.cpp",
+    "editor_plugin_list.cpp",
+    "syrian_assistant_plugin.cpp",
+]
+
+env.add_source_files(env.editor_sources, files)
